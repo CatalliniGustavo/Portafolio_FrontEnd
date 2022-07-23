@@ -1,0 +1,30 @@
+<form #f="ngForm" (ngSubmit)="onUpdate()" novalidate>
+    <h1 class="h3 mb-3 fw-normal" style="color: red">Modificar Perfil</h1>
+    <p style="color: red">{{errMsj}}</p>
+
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="user.nombre" required>
+    
+    <label for="nombre">Apellido</label>
+    <input type="text" id="apellido" name="apellido" class="form-control" [(ngModel)]="user.apellido" required>
+    
+    <label for="nombre">Email</label>
+    <input type="text" id="email" name="email" class="form-control" [(ngModel)]="user.email" required>
+
+    <label for="nombre">Título</label>
+    <input type="text" id="titulo" name="titulo" class="form-control" [(ngModel)]="user.titulo" required>
+
+    <label for="nombre">Imagen del Perfil</label>
+    <input type="text" id="img" name="img" class="form-control" [(ngModel)]="user.img" required>
+    
+    <label for="nombre">Imagen del Banner</label>
+    <input type="text" id="banner" name="banner" class="form-control" [(ngModel)]="user.banner" required>
+
+    <label for="nombre">Acerca de:</label>
+    <textarea class="form-control" id="acerca" name="acerca" [(ngModel)]="user.acerca" required></textarea>
+  
+    <div id="bot">
+      <a (click)="cancel()" class="w-40 btn btn-lg btn-primary">Cancelar</a>
+      <button class="w-40 btn btn-lg btn-primary" type="submit">Actualizar</button>
+    </div>
+  </form>

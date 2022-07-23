@@ -1,0 +1,21 @@
+<form #f="ngForm" (ngSubmit)="onUpdate(cancelar)" novalidate>
+    <h1 class="h3 mb-3 fw-normal" style="color: red">Editar Red</h1> 
+    <p style="color: red">{{errMsj}}</p>
+
+    <label for="nombre">Link de el logo de la Red</label>
+    <input type="text" id="imgIcono" name="imgIcono" class="form-control" [(ngModel)]="red.imgIcono" required>
+
+    <label for="nombre">Link de la Red</label>
+    <input type="url" id="linkIcono" name="linkIcono" class="form-control" [(ngModel)]="red.linkIcono" required>
+
+    <label for="nombre">Nombre de la Red</label>
+    <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="red.nombre" required>
+
+    <div id="bot">
+        <a (click)="cancel(cancelar)" class="w-40 btn btn-lg btn-primary">Cancelar</a>
+        <ng-template #cancelar let-modal>
+            <app-edit-redes></app-edit-redes>
+        </ng-template>
+        <button class="w-40 btn btn-lg btn-primary" type="submit">Modificar</button>
+    </div>
+</form>

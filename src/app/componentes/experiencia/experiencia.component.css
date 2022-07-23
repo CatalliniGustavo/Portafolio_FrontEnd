@@ -1,0 +1,36 @@
+.row {
+  padding: 0px;
+}
+h1,
+h3 {
+  display: inline;
+}
+#beditar {
+  float: inline-end;
+  float: right;
+}
+#logo {
+  display: grid;
+  width: 80px;
+  height: auto;
+}
+#imgcomp {
+  width: 100%;
+  margin-top: 10%;
+}
+ul {
+  padding: 20px;
+}
+
+li {
+  box-shadow: 0px 0px 20px #0000004d;
+  border-radius: 10px;
+  padding: 50px;
+  margin: 10px;
+}
+@media (max-width: 991px) {
+  #imgcomp {
+    width: 20%;
+    margin-top: 10%;
+  }
+}

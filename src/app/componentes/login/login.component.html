@@ -1,0 +1,73 @@
+<form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+  <h1 class="h3 mb-3 fw-normal" style="color: red">Porfavor Ingrese a la pagina</h1>
+  <p style="color: red">{{errMsj}}</p>
+  <label for="email"></label>
+  <input type="email" id="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="email" required>
+  <label for="password"></label>
+  <input type="password" id="password" name="password" class="form-control" placeholder="Password"
+    [(ngModel)]="password" required>
+
+  <div id="bot">
+    <a (click)="cancel()" id="bot" class="w-40 btn btn-lg btn-primary">Cancelar</a>
+    <button id="bot" class="w-40 btn btn-lg btn-primary" type="submit">Ingresar</button>
+  </div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+  <div>
+    <label for="email">Email: </label>
+    <input type="email" formControlName="email">
+  </div> -->
+<!-- Gracias al getter que configuramos en el controlador -->
+<!-- <div *ngIf="Mail?.errors  && Mail?.touched">
+    <p *ngIf="Mail?.hasError('required')" class="error">
+      El email es requerido.
+    </p>
+    <p *ngIf="Mail?.hasError('email')" class="error">
+      El formato del email debe ser válido.
+    </p>
+  </div>
+
+  <br />
+  <div>
+    <label for="exampleInputPassword1" class="form-label">Password: </label>
+    <input type="password" formControlName="password" [class.border-danger]="MailValid">
+  </div> -->
+<!-- Gracias al getter que configuramos en el controlador -->
+<!-- <div *ngIf="Password?.errors  && Password?.touched">
+    <p *ngIf="Password?.hasError('required')" class="error">
+      El password es requerido.
+    </p>
+    <p class="error">
+      El password debe ser de 8 o más caracteres.
+    </p>
+  </div>
+  <br />
+  <div>
+    <button type="submit" (click)="login(form.value.email)">Iniciar Sesión</button>
+  </div>
+</form> -->
+
+<!-- <div>
+  <p>Un debuger para mostrar que es posible hacer un biding directo al formulario <strong>{{form.value.email}}
+    </strong><strong>{{form.value.password}} </strong>
+  <p>
+    <br>
+
+</div> -->

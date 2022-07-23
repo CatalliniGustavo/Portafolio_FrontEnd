@@ -1,0 +1,36 @@
+<footer>
+    <div class="container-footer-all">
+        <div class="container-body row">
+            <div class="colum1 col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <h1>Informacion de la pagina</h1>
+                <p>Este es un proyecto final para el curso Argentina Programa en la etapa #YoProgramo del INTI. En el
+                    cual se nos dieron especificaciones como debe presentarse y que tecnologías debemos usar.</p>
+            </div>
+            <div class="colum2 col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <h1>Redes Sociales</h1>
+                <div class="row">
+                    <ul>
+                        <li *ngFor="let redes of redesList">
+                            <a [href]="redes.linkIcono" target="_blank"><img [src]="redes.imgIcono"></a>
+                            <label>{{redes.nombre}}</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="colum3 col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <h1>Información Contatos</h1>
+                <div class="row2">
+                    <ul>
+                        <li *ngFor="let contacto of contactoList">
+                            <a [href]="contacto.linkIcono" target="_blank"><img [src]="contacto.imgIcono"></a>
+                            <label>{{contacto.enlace}}</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-footer">
+        <label>© 2022 | Gustavo Catallini | Mendoza, Argentina</label>
+    </div>
+</footer>

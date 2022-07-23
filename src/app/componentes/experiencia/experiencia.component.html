@@ -1,0 +1,52 @@
+<div class="card mat-card" style="border-radius: 30px;">
+    <div class="row">
+        <div>
+            <h1>Experencia:</h1>
+            <a href="/#experiencia" (click)="open(content)" *ngIf="admin" id="beditar"><i class="fa fa-plus"></i></a>
+        </div>
+        <ng-template #content let-modal>
+            <app-new-experiencia></app-new-experiencia>
+        </ng-template>
+        <div>
+            <ul>
+                <li *ngFor="let experiencia of experiencias" class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-1" id="logo">
+                        <a [href]="experiencia.linkIcono" target="_blank"><img [src]="experiencia.imgIcono"
+                                id="imgcomp"></a>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
+                        <h1>{{experiencia.nombre}}</h1>
+                        <h3> (Inicio: </h3>
+                        <a href="/#experiencia" (click)="openEdit(edit, experiencia.id)" *ngIf="admin" id="beditar"><i
+                                class="fa fa-pen"></i></a>
+                                <ng-template #edit let-modal>
+                                    <app-edit-experiencia></app-edit-experiencia>
+                                </ng-template>
+                        <a href="#experiencia" (click)="open(trash)" *ngIf="admin" id="beditar"><i
+                                class="fa fa-solid fa-trash"></i></a>
+                                <ng-template #trash let-modal>
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Borrar Registro</h5>
+                                          </div>
+                                          <div class="modal-body">
+                                            !!!!Seguro que quiere eleminar?
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" (click)="cancel()" data-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-primary" (click)="delete(experiencia.id)">Borrar</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                </ng-template>
+                        <h3> <time> {{experiencia.fechainicio}}</time>) - (Hasta: <time>{{experiencia.fechafin}})</time> </h3>
+                        <h4> {{experiencia.lugar}}</h4>
+                        <h5>{{experiencia.titulo}}</h5>
+                        <p>{{experiencia.descripcion}}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

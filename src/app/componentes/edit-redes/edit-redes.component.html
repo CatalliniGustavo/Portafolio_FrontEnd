@@ -1,0 +1,97 @@
+<form #f="ngForm" *ngIf="redesList" (ngSubmit)="cargarRedes()" novalidate>
+    <h1 class="h3 mb-3 fw-normal" style="color: red">Editar Redes y Contactos</h1>
+<div class="redeslist">
+    <ul>
+        <a (click)="open(nuevaR)" *ngIf="admin" id="editar"><i class="fa fa-plus"></i></a>
+        <ng-template #nuevaR let-modal>
+            <app-nueva-red></app-nueva-red>
+        </ng-template>
+        <li *ngFor="let redes of redesList">
+            <a class="dropdown-item" [href]="redes.linkIcono" target="_blank"><img [src]="redes.imgIcono"
+                    id="imgR">{{redes.nombre}}</a>
+            <a (click)="openEdit(edit, redes.id)" *ngIf="admin" id="beditar"><i class="fa fa-pen"></i></a>
+            <a (click)="open(trash)" *ngIf="admin" id="beditar"><i class="fa fa-solid fa-trash"></i></a>
+            <ng-template #trash let-modal>
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Borrar Registro</h5>
+                        </div>
+                        <div class="modal-body">
+                            !!!!Seguro que quiere eleminar?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" (click)="cancel(cancelar)"
+                                data-dismiss="modal">Cancelar</button>
+                            <ng-template #cancelar let-modal>
+                                <app-edit-redes></app-edit-redes>
+                            </ng-template>
+                            <button type="button" class="btn btn-primary"
+                                (click)="delete(cancelar, redes.id)">Borrar</button>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </li>
+        <ng-template #cancelar let-modal>
+            <app-edit-redes></app-edit-redes>
+        </ng-template>
+
+        <ng-template #edit let-modal>
+            <app-editar-red></app-editar-red>
+        </ng-template>
+
+        <ng-template #content let-modal>
+            <app-new-red></app-new-red>
+        </ng-template>
+    </ul>
+    <ul>
+        <a (click)="open(nuevaC)" *ngIf="admin" id="editar"><i class="fa fa-plus"></i></a>
+        <ng-template #nuevaC let-modal>
+            <app-nuevo-contacto></app-nuevo-contacto>
+        </ng-template>
+        <li *ngFor="let contacto of contactosList">
+            <a class="dropdown-item" [href]="contacto.linkIcono" target="_blank"><img [src]="contacto.imgIcono"
+                    id="imgR">{{contacto.nombre}}</a>
+            <a (click)="openEdit(editC, contacto.id)" *ngIf="admin" id="beditar"><i class="fa fa-pen"></i></a>
+            <a (click)="open(trash)" *ngIf="admin" id="beditar"><i class="fa fa-solid fa-trash"></i></a>
+            <ng-template #trash let-modal>
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Borrar Registro</h5>
+                        </div>
+                        <div class="modal-body">
+                            !!!!Seguro que quiere eleminar?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" (click)="cancel(cancelar)"
+                                data-dismiss="modal">Cancelar</button>
+                            <ng-template #cancelar let-modal>
+                                <app-edit-redes></app-edit-redes>
+                            </ng-template>
+                            <button type="button" class="btn btn-primary"
+                                (click)="deleteC(cancelar, contacto.id)">Borrar</button>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </li>
+        <ng-template #cancelar let-modal>
+            <app-edit-redes></app-edit-redes>
+        </ng-template>
+
+        <ng-template #editC let-modal>
+            <app-editar-contacto></app-editar-contacto>
+        </ng-template>
+
+        <ng-template #content let-modal>
+            <app-new-red></app-new-red>
+        </ng-template>
+    </ul>
+</div>
+
+    <div id="bot">
+        <a (click)="salir()" id="bot" class="w-40 btn btn-lg btn-primary">Salir</a>
+    </div>
+</form>

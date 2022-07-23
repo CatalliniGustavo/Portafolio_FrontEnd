@@ -1,0 +1,24 @@
+<form #f="ngForm" (ngSubmit)="onCreate()" novalidate>
+  <h1 class="h3 mb-3 fw-normal" style="color: red">Nueva Educación</h1>
+  <label for="nombre">Link de el logo de la empresa o institución</label>
+  <input type="text" id="imgIcono" name="imgIcono" class="form-control" [(ngModel)]="imgIcono" required>
+  <label for="nombre">Link de la empresa o institución</label>
+  <input type="url" id="linkIcono" name="linkIcono" class="form-control" [(ngModel)]="linkIcono" required>
+  <label for="nombre">Nombre de la empresa o institución</label>
+  <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="nombre" required>
+  <label for="nombre">Fecha de inicio</label>
+  <input type="date" id="fechainicio" name="fechainicio" class="form-control" [(ngModel)]="fechainicio" required>
+  <label for="nombre">Fecha de teminación</label>
+  <input type="date" id="fechafin" name="fechafin" class="form-control" [(ngModel)]="fechafin" required>
+  <label for="nombre">Lugar de la empresa o institución</label>
+  <input type="text" id="lugar" name="lugar" class="form-control" [(ngModel)]="lugar" required>
+  <label for="nombre">Título de los estudios</label>
+  <input type="text" id="titulo" name="titulo" class="form-control" [(ngModel)]="titulo" required>
+  <label for="nombre">Descripción del programa de estudios</label>
+  <textarea class="form-control" id="descripcion" name="descripcion" [(ngModel)]="descripcion" required></textarea>
+
+  <div id="bot">
+    <a (click)="cancel()" href="#educacion" class="w-40 btn btn-lg btn-primary">Cancelar</a>
+    <button href="#educacion" class="w-40 btn btn-lg btn-primary" type="submit">Agregar</button>
+  </div>
+</form>

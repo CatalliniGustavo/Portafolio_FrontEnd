@@ -1,0 +1,26 @@
+<form #f="ngForm" *ngIf="hduras" (ngSubmit)="onUpdate()" novalidate>
+    <h1 class="h3 mb-3 fw-normal" style="color: red">Editar Habilidad</h1>
+    <p style="color: red">{{errMsj}}</p>
+
+    <label for="nombre">Imagen de la Habilidad</label>
+    <input type="text" id="imgIcono" name="imgIcono" class="form-control" [(ngModel)]="hduras.imgIcono" required>
+  
+    <label for="nombre">Titulo de la Habilidad</label>
+    <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="hduras.nombre" required>
+  
+    <label for="quantity">Tiempo de Experiencia</label>
+    <input type="number" id="tiempoexpe" name="tiempoexpe" class="form-control" min="1" [(ngModel)]="hduras.tiempoexpe"
+      required>
+  
+    <label for="customRange3" class="form-label">Porcentaje del Dominio</label>
+    <input type="range" class="form-range" min="0" max="100" step="5" id="progreso" name="progreso"
+      [(ngModel)]="hduras.progreso" required>
+    <input type="number" id="progreso" name="progreso" class="form-control" min="1" [(ngModel)]="hduras.progreso"
+      required>
+  
+    <div id="bot">
+      <a (click)="cancel()" href="#habilidades" class="w-40 btn btn-lg btn-primary">Cancelar</a>
+      <button href="#habilidades" class="w-40 btn btn-lg btn-primary" type="submit">Actualizar</button>
+    </div>
+  
+  </form>

@@ -1,0 +1,62 @@
+<div class="card mat-card">
+    <div id="info-data">
+        <div>
+            <h1>Acerca de:</h1>
+  
+        </div>
+        <div class="btn-edit" onclick="cambiar_parrafo()">
+            <a href="#" class="btn-right">
+                <i class="fa fa-pen" style="color: greenyellow;"></i>
+            </a>
+        </div>
+    </div>
+    <div>
+        <p id="text-acercade">Estudiante de desarrollo web en dos oportunidades</p>
+    </div>
+    <div>
+        <input id="edit-acercade" type="text" oninput="myFunction2(this.value)" style="display: none;">
+    </div>
+    <br>
+    <input type="file" id="file1" onchange="showFile(this)">
+  </div>
+  
+  <script>
+    function cambiar_parrafo() {
+        document.getElementById("edit-acercade").style.display = "block";
+        let texto = document.getElementById("text-acercade").innerText;
+        console.log(texto);
+    };
+  
+    function myFunction2(valor) {
+        document.getElementById("text-acercade").innerText = valor;
+    };
+  
+    function logMessange(message) {
+        console.log(message + "<br>");
+    }
+  
+    let textarea = document.getElementById("edit-acercade")
+    textarea.addEventListener('keyup', (e) => {
+        logMessange(`Key "${e.key}" realsed [event: Keyup]`);
+        if (e.key == "Enter") {
+            document.getElementById("edit-acercade").style.display = "none"
+        }
+    });
+  
+    function showFile(input) {
+        let file = input.files[0];
+        alert(`File name: ${file.name}`);
+        alert(`Last modified: ${file.lastModified}`);
+  
+        let reader = new FileReader();
+        reader.readAsText(file);
+        reader.onload = function () {
+            console.log(reader.result);
+            document.getElementById("text-acercade").innerText = reader.result;
+        };
+        reader.error = function () {
+            console.log(reader.error);
+        };
+    }
+  
+  </script>

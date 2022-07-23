@@ -9,7 +9,7 @@ import { TokenService } from './token.service';
   providedIn: 'root'
 })
 export class ContactoService {
-  URL = 'http://localhost:8080/contacto/';
+  URL = 'https://ancient-ocean-71608.herokuapp.com/contacto/';
 
   constructor(private http: HttpClient, private tokenService: TokenService, private datosPorfolio: PorfolioService) { }
 

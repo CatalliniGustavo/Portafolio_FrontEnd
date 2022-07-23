@@ -10,7 +10,7 @@ import { TokenService } from './token.service';
 })
 export class RedesService {
   
-  URL = 'http://localhost:8080/redes/';
+  URL = 'https://ancient-ocean-71608.herokuapp.com/redes/';
 
   constructor(private http: HttpClient, private tokenService: TokenService, private datosPorfolio: PorfolioService) { }
 

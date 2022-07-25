@@ -1,41 +1,65 @@
 nav {
-    inline-size: 100%;
-    z-index: 10;
-    padding: 0%;
-    box-shadow: 0px 0px 10px white;
-    size: 100%;
+  inline-size: 100%;
+  z-index: 10;
+  padding: 0%;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0);
+  size: 100%;
 }
-#aplogo{
-    block-size: 80px;
-    border-radius: 7%;
-    box-shadow: 0px 0px 10px rgb(255, 255, 255);
-    padding: 5px;
-    margin: 3px;
+#aplogo {
+  block-size: 80px;
+  border-radius: 7%;
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
+  padding: 5px;
+  margin: 3px;
 }
-.container-fluid{
-    background-color: rgb(93 101 255);
+.container-fluid {
+  /* background-color: rgb(93 101 255); */
+  background-image: linear-gradient(to bottom, #0066ff, #0048b3, #002864);
 }
-#imgR{
-    inline-size: 30px;
-    border-radius: 100%;
-    margin-inline-end: 10px;
-    box-shadow: -2px 2px 3px black;
+#imgR {
+  inline-size: 30px;
+  border-radius: 100%;
+  margin-inline-end: 10px;
+  box-shadow: -2px 2px 3px rgb(255, 255, 255);
 }
-button{
-    background-color: red;
-    box-shadow: 0px 0px 5px rgb(255, 255, 255);
-    margin-inline-start: 20px;
-
-}
-#navbarDropdown, #list{
-    margin-inline-start: 20px;
-}
-#list{
-    margin-block-end: 10px;
+button {
+  background-color: rgb(255, 0, 0);
+  box-shadow: 0px 0px 5px rgb(255, 255, 255);
+  margin-inline-start: 20px;
+  margin: 3%;
 }
 
-#rededi{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+#navbarDropdown {
+  font-size: 1.6rem;
+}
+
+#navbarDropdown,
+#list {
+  margin-inline-start: 20px;
+}
+#list {
+    margin-block-end: 3px;
+    box-shadow: 0px 0px 30px #101010;
+    background-image: linear-gradient(180deg, #0066ff, #0048b3, #002864);
+}
+
+#rededi {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#beditar {
+  color: white;
+  background-color: #ffffff00;
+}
+
+#butt {
+  display: flex;
+  margin: 2%;
+  justify-content: center;
+}
+
+.dropdown-item{
+    color: white;
 }

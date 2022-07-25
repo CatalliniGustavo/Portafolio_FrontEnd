@@ -1,23 +1,23 @@
-<div *ngIf="!isLogin" id="profile-background"><img src="../../../assets/img/Banner_sinLogin.jpg" alt="Banner">
-</div>
 <div *ngIf="isLogin" class="card mat-card" id="first-card">
-    <div id="profile-background"><img [src]="user.banner" onError="this.src='../../../assets/img/Banner_Error.jpg';" alt="Banner">
+    <div id="profile-background"><img [src]="user.banner" onError="this.src='../../../assets/img/Banner_Error.jpg';"
+            alt="Banner">
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <div><img [src]="user.img" onError="this.src='../../../assets/img/Perfil_Error.jpg';" alt="Imagen Perfil" class="img-fluid" id="iperfil">
+            <div><img [src]="user.img" onError="this.src='../../../assets/img/Perfil_Error.jpg';" alt="Imagen Perfil"
+                    class="img-fluid" id="iperfil">
             </div>
             <div>
                 <p id="nombrePerfil">{{user.nombre}} {{user.apellido}}</p>
                 <p id="ptitulo" *ngIf="isLogin">{{user.titulo}}</p>
             </div>
         </div>
-        <div  class="col-xs-12 col-sm-7 col-md-7 col-lg-7" id="pacercade">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7" id="pacercade">
             <h1 *ngIf="isLogin">Acerca de mí:</h1>
             <p>{{user.acerca}}</p>
         </div>
-        <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1" >
-            <a *ngIf="admin" (click)="open(edit)" id="beditar" ><i class="fa fa-pen"></i></a>
+        <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+            <a *ngIf="admin" (click)="open(edit)" id="beditar"><i class="fa fa-pen"></i></a>
             <ng-template #edit let-modal>
                 <app-editar-perfil></app-editar-perfil>
             </ng-template>

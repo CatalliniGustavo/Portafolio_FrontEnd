@@ -1,0 +1,13 @@
+<div id="form">
+    <h1 class="h3 mb-3 fw-normal">Porfavor Ingrese a la pagina</h1>
+    <div id="bot">
+        <a (click)="open(login)" id="bot" class="w-40 btn btn-lg btn-primary">Login</a>
+        <ng-template #login>
+            <app-login></app-login>
+        </ng-template>
+        <a (click)="open(register)" id="bot" class="w-40 btn btn-lg btn-primary">Registrarse</a>
+        <ng-template #register>
+            <app-register></app-register>
+        </ng-template>
+    </div>
+</div>

@@ -23,3 +23,8 @@ label {
   justify-content: space-evenly;
 }
 
+h1,
+p {
+  text-align: center;
+  color: red;
+}

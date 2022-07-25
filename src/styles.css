@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 body {
-    background-image: url(../src/assets/img/fondo12.jpg);
+    /* background-image: url(../src/assets/img/fondo12.jpg); */
     /* background-repeat: no-repeat; */
+    background-color: rgb(60, 0, 0);
     background-attachment: fixed;
     height: 100%;
     background-size: 100%;

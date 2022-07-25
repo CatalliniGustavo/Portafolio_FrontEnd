@@ -10,12 +10,15 @@
     </div>
 </nav> -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container-fluid">
+    <div class="container-fluid" id="fondo">
+
         <a class="navbar-brand"
             href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa"
             target="_blank"><img src="../../../assets/img/ArgentinaPrograma.jpg" id="aplogo"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+        <button *ngIf="isLogin" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -30,13 +33,16 @@
                         <a class="nav-link active" aria-current="page" href="#"></a>
                     </li>
                     <li class="nav-item dropdown" id="rededi">
-                        <a *ngIf="isLogin" class="nav-link dropdown-toggle active" href="#" id="navbarDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Redes
-                        </a><a (click)="open(editRC)" *ngIf="admin" id="beditar"><i class="fa fa-pen"></i></a>
-                        <ng-template #editRC let-modal>
-                            <app-edit-redes></app-edit-redes>
-                        </ng-template>
+                        
+                            <a *ngIf="isLogin" class="nav-link dropdown-toggle active" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Redes
+                            </a><a (click)="open(editRC)" *ngIf="admin"><i class="fa fa-pen" id="beditar"></i></a>
+                            <ng-template #editRC let-modal>
+                                <app-edit-redes></app-edit-redes>
+                            </ng-template>
+                        
+
                         <ul class="dropdown-menu" id="list" aria-labelledby="navbarDropdown">
                             <li *ngFor="let redes of redesList">
                                 <a class="dropdown-item" [href]="redes.linkIcono" target="_blank"><img
@@ -51,21 +57,26 @@
                             </ng-template>
                         </ul>
                     </li>
-                    
-                    <button class="btn btn-danger" type="submit" (click)="open(login)" *ngIf="!isLogin">Login</button>
-                    <ng-template #login let-modal>
-                        <app-login></app-login>
-                    </ng-template>
-                    <button class="btn btn-danger" type="submit" (click)="open(registre)"
-                        *ngIf="!isLogin">Registrarse</button>
-                    <ng-template #registre let-modal>
-                        <app-register></app-register>
-                    </ng-template>
-                    <button class="btn btn-danger" type="submit" (click)="onLogOut()" *ngIf="isLogin">Cerrar
-                        Sesión</button>
+
+
+
                 </ul>
 
             </form>
+            <button class="btn btn-danger" type="submit" (click)="onLogOut()" *ngIf="isLogin">Cerrar
+                Sesión</button>
         </div>
+
+        <div *ngIf="!isLogin" id="butt">
+            <button class="btn btn-danger" type="submit" (click)="open(login)" *ngIf="!isLogin">Login</button>
+            <ng-template #login let-modal>
+                <app-login></app-login>
+            </ng-template>
+            <button class="btn btn-danger" type="submit" (click)="open(registre)" *ngIf="!isLogin">Registrarse</button>
+            <ng-template #registre let-modal>
+                <app-register></app-register>
+            </ng-template>
+        </div>
+
     </div>
 </nav>

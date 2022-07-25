@@ -30,6 +30,7 @@ li {
 }
 ul {
   padding-inline-start: 0px;
+  justify-content: space-evenly;
 }
 h1,
 h3,

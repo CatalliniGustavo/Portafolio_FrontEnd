@@ -1,26 +1,30 @@
 input {
-    padding: 3px;
-    width: 100%;
-  }
-  
-  form {
-    padding-left: 50px;
-    padding-top: 30px;
-    padding-right: 50px;
-    padding-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    padding: 5px;
-  }
-  
-  #bot {
-    display: flex;
-    margin-top: 10px;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-  
-  
+  padding: 3px;
+  width: 100%;
+}
+
+form {
+  padding-left: 50px;
+  padding-top: 30px;
+  padding-right: 50px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  padding: 5px;
+}
+
+#bot {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+h1,
+p {
+  text-align: center;
+  color: red;
+}

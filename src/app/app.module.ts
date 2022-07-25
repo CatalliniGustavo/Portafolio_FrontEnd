@@ -42,6 +42,7 @@ import { NuevaRedComponent } from './componentes/edit-redes/nueva-red.component'
 import { NuevoContactoComponent } from './componentes/edit-redes/nuevo-contacto.component';
 import { EditarContactoComponent } from './componentes/edit-redes/editar-contacto.component';
 import { EditarPerfilComponent } from './componentes/card-perfil/editar-perfil.component';
+import { RequestlogComponent } from './componentes/home/requestlog.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { EditarPerfilComponent } from './componentes/card-perfil/editar-perfil.c
     NuevaRedComponent,
     NuevoContactoComponent,
     EditarContactoComponent,
-    EditarPerfilComponent
+    EditarPerfilComponent,
+    RequestlogComponent
   ],
   imports: [
     BrowserModule,

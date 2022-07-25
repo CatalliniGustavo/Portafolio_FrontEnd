@@ -1,8 +1,17 @@
-<div >
+<div id="fondo">
     <app-header></app-header>
+
+    <div *ngIf="!login" (click)="open(requestlog)"><img id="profile-background"
+            src="../../../assets/img/Banner_sinLogin.jpg" alt="Banner">
+    </div>
+
+    <ng-template #requestlog let-modal>
+        <app-requestlog></app-requestlog>
+    </ng-template>
     <div class="targeta">
-        <app-card-perfil id="perfil"></app-card-perfil>
-        <div *ngIf="login" >
+
+        <div *ngIf="login">
+            <app-card-perfil id="perfil"></app-card-perfil>
             <app-experiencia id="experiencia"></app-experiencia>
             <app-educacion id="educacion"></app-educacion>
             <app-habilidades id="habilidades"></app-habilidades>

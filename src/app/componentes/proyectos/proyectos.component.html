@@ -33,14 +33,14 @@
                               </div>
                         </ng-template>
                         
-                        <a [href]="proyecto.github"><img src="../../../assets/img/github.svg" alt=""></a>
+                        <a [href]="proyecto.github" target="_blank"><img src="../../../assets/img/github.svg" alt=""></a>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7" id="divP">
                         <h3>{{proyecto.nombre}}</h3>
                         <p>{{proyecto.descripcion}}</p>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5" id="divP">
-                        <a [href]="proyecto.github"><img [src]="proyecto.imgIcono" alt="" id="imgP"></a>
+                        <a [href]="proyecto.linkProy" target="_blank"><img [src]="proyecto.imgIcono" alt="" id="imgP"></a>
                     </div>
                 </li>
             </ul>

@@ -15,6 +15,7 @@ export class NewProyectoComponent implements OnInit {
   nombre: string;
   descripcion: string;
   github: string;
+  linkProy: string;
   errMsj!: string;
 
   constructor(
@@ -31,7 +32,8 @@ export class NewProyectoComponent implements OnInit {
       this.imgIcono,
       this.nombre,
       this.descripcion,
-      this.github
+      this.github,
+      this.linkProy
     );
     this.proyectoService.save(proyecto).subscribe(data => {
       this.closeModal()

@@ -1,24 +1,25 @@
 <form #f="ngForm" *ngIf="experiencia" (ngSubmit)="onUpdate()" novalidate>
-    <h1 class="h3 mb-3 fw-normal" style="color: red">Nueva Experiencia</h1>
-    <label for="nombre">Link de el logo de la empresa o institución</label>
-    <input type="text" id="imgIcono" name="imgIcono" class="form-control" [(ngModel)]="experiencia.imgIcono" required>
-    <label for="nombre">Link de la empresa o institución</label>
-    <input type="url" id="linkIcono" name="linkIcono" class="form-control" [(ngModel)]="experiencia.linkIcono" required>
-    <label for="nombre">Nombre de la empresa o institución</label>
-    <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="experiencia.nombre" required>
-    <label for="nombre">Fecha de inicio</label>
-    <input type="month" id="fechainicio" name="fechainicio" class="form-control" [(ngModel)]="experiencia.fechainicio" required>
-    <label for="nombre">Fecha de teminación</label>
-    <input type="month" id="fechafin" name="fechafin" class="form-control" [(ngModel)]="experiencia.fechafin" required>
-    <label for="nombre">Lugar de la empresa o institución</label>
-    <input type="text" id="lugar" name="lugar" class="form-control" [(ngModel)]="experiencia.lugar" required>
-    <label for="nombre">Título de la posición</label>
-    <input type="text" id="titulo" name="titulo" class="form-control" [(ngModel)]="experiencia.titulo" required>
-    <label for="nombre">Descripción de la tarea</label>
-    <input type="text" id="descripcion" name="descripcion" class="form-control" [(ngModel)]="experiencia.descripcion" required>
-    
-    <div id="bot">
-      <a (click)="cancel()" href="#experiencia" id="bot" class="w-40 btn btn-lg btn-primary">Cancelar</a>
-      <button href="#experiencia" id="bot" class="w-40 btn btn-lg btn-primary" type="submit">Actualizar</button>
-    </div>
-  </form>
+  <h1 class="h3 mb-3 fw-normal" style="color: red">Nueva Experiencia</h1>
+  <label for="nombre">Link de el logo de la empresa o institución</label>
+  <input type="text" id="imgIcono" name="imgIcono" class="form-control" [(ngModel)]="experiencia.imgIcono" required>
+  <label for="nombre">Link de la empresa o institución</label>
+  <input type="url" id="linkIcono" name="linkIcono" class="form-control" [(ngModel)]="experiencia.linkIcono" required>
+  <label for="nombre">Nombre de la empresa o institución</label>
+  <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="experiencia.nombre" required>
+  <label for="nombre">Fecha de inicio</label>
+  <input type="month" id="fechainicio" name="fechainicio" class="form-control" [(ngModel)]="experiencia.fechainicio"
+    required>
+  <label for="nombre">Fecha de teminación</label>
+  <input type="month" id="fechafin" name="fechafin" class="form-control" [(ngModel)]="experiencia.fechafin" required>
+  <label for="nombre">Lugar de la empresa o institución</label>
+  <input type="text" id="lugar" name="lugar" class="form-control" [(ngModel)]="experiencia.lugar" required>
+  <label for="nombre">Título de la posición</label>
+  <input type="text" id="titulo" name="titulo" class="form-control" [(ngModel)]="experiencia.titulo" required>
+  <label for="nombre">Descripción de la tarea</label>
+  <textarea class="form-control" id="descripcion" name="descripcion" [(ngModel)]="experiencia.descripcion"
+    required></textarea>
+  <div id="bot">
+    <a (click)="cancel()" href="#experiencia" id="bot" class="w-40 btn btn-lg btn-primary">Cancelar</a>
+    <button href="#experiencia" id="bot" class="w-40 btn btn-lg btn-primary" type="submit">Actualizar</button>
+  </div>
+</form>

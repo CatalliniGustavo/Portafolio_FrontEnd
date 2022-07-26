@@ -15,8 +15,7 @@
   <label for="nombre">Título de la posición</label>
   <input type="text" id="titulo" name="titulo" class="form-control" [(ngModel)]="titulo" required>
   <label for="nombre">Descripción de la tarea</label>
-  <input type="text" id="descripcion" name="descripcion" class="form-control" [(ngModel)]="descripcion" required>
-  
+  <textarea class="form-control" id="descripcion" name="descripcion" [(ngModel)]="descripcion" required></textarea>
   <div id="bot">
     <a (click)="cancel()" href="#experiencia" class="w-40 btn btn-lg btn-primary">Cancelar</a>
     <button href="#experiencia" class="w-40 btn btn-lg btn-primary" type="submit">Agregar</button>

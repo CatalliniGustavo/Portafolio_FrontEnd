@@ -3,11 +3,12 @@ input {
   width: 100%;
 }
 
+ul {
+  padding: 0%;
+}
+
 form {
-  padding-left: 50px;
-  padding-top: 30px;
-  padding-right: 50px;
-  padding-bottom: 30px;
+  padding: 30px 5px;
   display: flex;
   flex-direction: column;
 }
@@ -60,7 +61,7 @@ li {
   width: 10% !important;
 }
 
-#enlace{
+#enlace {
   width: 30%;
 }
 

@@ -18,7 +18,7 @@
                             <h5 class="modal-title" id="exampleModalLabel">Borrar Registro</h5>
                         </div>
                         <div class="modal-body">
-                            !!!!Seguro que quiere eleminar?
+                            !!!!Seguro que quiere eliminar?
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" (click)="cancel(cancelar)"
@@ -40,10 +40,6 @@
         <ng-template #edit let-modal>
             <app-editar-red></app-editar-red>
         </ng-template>
-
-        <ng-template #content let-modal>
-            <app-new-red></app-new-red>
-        </ng-template>
     </ul>
     <ul>
         <a (click)="open(nuevaC)" *ngIf="admin" id="editar"><i class="fa fa-plus"></i></a>
@@ -62,7 +58,7 @@
                             <h5 class="modal-title" id="exampleModalLabel">Borrar Registro</h5>
                         </div>
                         <div class="modal-body">
-                            !!!!Seguro que quiere eleminar?
+                            !!!!Seguro que quiere eliminar?
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" (click)="cancel(cancelar)"
@@ -83,10 +79,6 @@
 
         <ng-template #editC let-modal>
             <app-editar-contacto></app-editar-contacto>
-        </ng-template>
-
-        <ng-template #content let-modal>
-            <app-new-red></app-new-red>
         </ng-template>
     </ul>
 </div>

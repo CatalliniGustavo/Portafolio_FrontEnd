@@ -1,4 +1,5 @@
 <div id="fondo">
+    
     <app-header></app-header>
 
     <div *ngIf="!login" (click)="open(requestlog)"><img id="profile-background"
@@ -8,6 +9,7 @@
     <ng-template #requestlog let-modal>
         <app-requestlog></app-requestlog>
     </ng-template>
+
     <div class="targeta">
 
         <div *ngIf="login">
@@ -18,5 +20,7 @@
             <app-proyectos id="proyectos"></app-proyectos>
             <app-footer></app-footer>
         </div>
+
     </div>
+
 </div>

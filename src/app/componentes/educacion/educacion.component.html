@@ -7,7 +7,7 @@
         <ng-template #content let-modal>
             <app-new-educacion></app-new-educacion>
         </ng-template>
-        <div>
+        <div id="tar">
             <ul>
                 <li *ngFor="let educacion of educaciones" class="row">
 
@@ -42,7 +42,7 @@
                                         <h5 class="modal-title" id="exampleModalLabel">Borrar Registro</h5>
                                     </div>
                                     <div class="modal-body">
-                                        !!!!Seguro que quiere eleminar?
+                                        !!!!Seguro que quiere eliminar?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" (click)="cancel()"

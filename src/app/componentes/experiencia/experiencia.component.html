@@ -1,13 +1,13 @@
 <div class="card mat-card" style="border-radius: 30px;">
     <div class="row">
         <div>
-            <h1>Experencia:</h1>
+            <h1>Experiencia:</h1>
             <a href="/#experiencia" (click)="open(content)" *ngIf="admin" id="beditar"><i class="fa fa-plus"></i></a>
         </div>
         <ng-template #content let-modal>
             <app-new-experiencia></app-new-experiencia>
         </ng-template>
-        <div>
+        <div id="tar">
             <ul>
                 <li *ngFor="let experiencia of experiencias" class="row">
 
@@ -41,7 +41,7 @@
                                         <h5 class="modal-title" id="exampleModalLabel">Borrar Registro</h5>
                                     </div>
                                     <div class="modal-body">
-                                        !!!!Seguro que quiere eleminar?
+                                        !!!!Seguro que quiere eliminar?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" (click)="cancel()"

@@ -1,67 +1,44 @@
-<!-- <nav class="navbar fixed-top navbar-light bg-light">
-    <div>
-        <a href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa"
-            target="_blank" class="navbar-brand"><img src="../../../assets/img/APLogo.png" alt="Argentina Programa" id="logoAP"></a>
-        <a href="" target="_blank" class="navbar-brand"><img src="../../../assets/img/facebook.png" alt="" class="redesS"></a>
-        <a href="" target="_blank" class="navbar-brand"><img src="../../../assets/img/github.png" alt="" class="redesS"></a>
-        <a href="" target="_blank" class="navbar-brand"><img src="../../../assets/img/linkedin.png" alt="" class="redesS"></a>
-        <a href="" target="_blank" class="navbar-brand"><img src="../../../assets/img/gmail.png" alt="" class="redesS"></a>
-        <a href="" target="_blank" class="navbar-brand"><img src="../../../assets/img/whatsapp.png" alt="" class="redesS"></a>
-    </div>
-</nav> -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+   
     <div class="container-fluid" id="fondo">
-
         <a class="navbar-brand"
             href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa"
-            target="_blank"><img src="../../../assets/img/ArgentinaPrograma.jpg" id="aplogo"></a>
-
+            target="_blank"><img
+                src="https://yt3.ggpht.com/9upo5zbtXzvItj8IMHF1X9hI95x4YOeGCApLk1DhMQCHftmJvf2GWmbJXrC1TKCrn-AyQ2txBw=s900-c-k-c0x00ffffff-no-rj"
+                id="aplogo"></a>
         <button *ngIf="isLogin" class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                 </li>
             </ul>
             <form class="d-flex">
-                <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#"></a>
                     </li>
                     <li class="nav-item dropdown" id="rededi">
-                        
-                            <a *ngIf="isLogin" class="nav-link dropdown-toggle active" href="#" id="navbarDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Redes
-                            </a><a (click)="open(editRC)" *ngIf="admin"><i class="fa fa-pen" id="beditar"></i></a>
-                            <ng-template #editRC let-modal>
-                                <app-edit-redes></app-edit-redes>
-                            </ng-template>
-                        
 
+                        <a *ngIf="isLogin" class="nav-link dropdown-toggle active" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Redes
+                        </a><a (click)="open(editRC)" *ngIf="admin"><i class="fa fa-pen" id="beditar"></i></a>
+                        <ng-template #editRC let-modal>
+                            <app-edit-redes></app-edit-redes>
+                        </ng-template>
                         <ul class="dropdown-menu" id="list" aria-labelledby="navbarDropdown">
                             <li *ngFor="let redes of redesList">
                                 <a class="dropdown-item" [href]="redes.linkIcono" target="_blank"><img
                                         [src]="redes.imgIcono" id="imgR">{{redes.nombre}}</a>
                             </li>
-                            <ng-template #edit let-modal>
-                                <app-edit-red></app-edit-red>
-                            </ng-template>
-
-                            <ng-template #content let-modal>
-                                <app-new-red></app-new-red>
-                            </ng-template>
                         </ul>
                     </li>
-
-
-
                 </ul>
-
             </form>
             <button class="btn btn-danger" type="submit" (click)="onLogOut()" *ngIf="isLogin">Cerrar
                 Sesión</button>
@@ -79,4 +56,5 @@
         </div>
 
     </div>
+    
 </nav>

@@ -1,7 +1,8 @@
 <div class="card mat-card" style="border-radius: 30px;">
-    <div style="padding: 2%;">
+    <div class="habilidadescont">
         <div>
-            <h1>Habilidades:</h1><a (click)="openHb(hblandas)" *ngIf="admin" id="bagregar"><i class="fa fa-plus"></i></a>
+            <h1>Habilidades:</h1><a (click)="openHb(hblandas)" *ngIf="admin" id="bagregar"><i
+                    class="fa fa-plus"></i></a>
             <ng-template #hblandas let-modal>
                 <app-new-habilidad></app-new-habilidad>
             </ng-template>
@@ -9,50 +10,50 @@
 
         </div>
         <div>
-            <ul class="row">
-                <li *ngFor="let habilidadesB of hblandasl" class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
-                    <div id="titulo">
-                        <h5>{{habilidadesB.nombre}}</h5>
-                        <h6>Experiencia: {{habilidadesB.tiempoexpe}} año</h6>
-                    </div>
-                    <div id="progre">
-                        <circle-progress id="circulo"
-                        [percent]="habilidadesB.progreso" 
-                        [radius]="80"
-                        [outerStrokeWidth]="12" 
-                        [innerStrokeWidth]="5" 
-                        [outerStrokeColor]="'red'"
-                        [innerStrokeColor]="'grey'" 
-                        [animationDuration]="1000" 
-                        [imageWidth]="70" 
-                        [responsive]="true"
-                        [imageHeight]="70"
-                        [showImage]="true" 
-                        [imageSrc]="habilidadesB.imgIcono">
-                        </circle-progress>
-                        <a *ngIf="admin" (click)="openEditHb(edithb, habilidadesB.id)"  id="beditar"><i class="fa fa-pen"></i></a>
-                        <ng-template #edithb>
-                            <app-edi-habilidad></app-edi-habilidad>
-                        </ng-template>
-                        <a *ngIf="admin" id="beditar" (click)="openHb(trash)" ><i class="fa fa-solid fa-trash"></i></a>
-                        <ng-template #trash let-modal>
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Borrar Registro</h5>
-                                  </div>
-                                  <div class="modal-body">
-                                    !!!!Seguro que quiere eliminar?
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" (click)="cancel()" data-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-primary" (click)="deleteHb(habilidadesB.id)">Borrar</button>
-                                  </div>
-                                </div>
-                              </div>
-                        </ng-template>
-                    </div>
+            <ul class="ulduras">
+                <li *ngFor="let habilidadesB of hblandasl" class="listb col-lg-1 col-md-2 col-sm-2 col-xs-2"
+                    id="{{habilidadesB.nombre}}">
+                    <div class="cont">
+                        <div class="nbar">
+                            <img [src]="habilidadesB.imgIcono" alt="" class="icon">
+                            <p class="titulo">{{habilidadesB.nombre}}</p>
+                        </div>
 
+                        <div class="bbar">
+                            <div class="pbar">
+                                <div class="porb" style="--p:{{habilidadesB.progreso}}%">
+                                    <!-- {{habilidadesD.progreso}}% -->
+                                </div>
+                            </div>
+                            <div class="conbot">
+                                <a *ngIf="admin" (click)="openEditHd(edithd, habilidadesB.id)" id="beditar">
+                                    <i class="fa fa-pen tfa"></i></a>
+                                <ng-template #edithd>
+                                    <app-edit-habilidad-d></app-edit-habilidad-d>
+                                </ng-template>
+                                <a *ngIf="admin" id="beditar" (click)="openHd(trashD)"><i
+                                        class="fa fa-solid fa-trash tfa"></i></a>
+                                <ng-template #trashD let-modal>
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Borrar Registro</h5>
+                                            </div>
+                                            <div class="modal-body">
+                                                !!!!Seguro que quiere eliminar?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" (click)="cancel()"
+                                                    data-dismiss="modal">Cancelar</button>
+                                                <button type="button" class="btn btn-primary"
+                                                    (click)="deleteHd(habilidadesB.id)">Borrar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -61,53 +62,65 @@
             <ng-template #hduras let-modal>
                 <app-new-habilidad-d></app-new-habilidad-d>
             </ng-template>
-            <h3>Duras:</h3>
+            <div class="ref">
+                <h3>Duras:</h3>
+                <div class="por"></div>
+                <p>Concimiento</p>
+                <div class="pore"></div>
+                <p>Experiencia (1 a 5 años)</p>
+            </div>
+            
         </div>
         <div>
-            <ul class="row">
-                <li *ngFor="let habilidadesD of hdurasl" class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
-                    <div id="titulo">
-                        <h5>{{habilidadesD.nombre}}</h5>
-                        <h6>Experiencia: {{habilidadesD.tiempoexpe}} año</h6>
-                    </div>
-                    <div id="progre">
-                        <circle-progress id="circulo" 
-                        [percent]="habilidadesD.progreso" 
-                        [radius]="80"
-                        [outerStrokeWidth]="12" 
-                        [innerStrokeWidth]="5" 
-                        [outerStrokeColor]="'red'"
-                        [responsive]="true"
-                        [innerStrokeColor]="'grey'" 
-                        [animationDuration]="1000" 
-                        [imageWidth]="70" 
-                        [imageHeight]="70"
-                        [showImage]="true" 
-                        [imageSrc]="habilidadesD.imgIcono">
-                        </circle-progress>
-                        <a *ngIf="admin" (click)="openEditHd(edithd, habilidadesD.id)"  id="beditar"><i class="fa fa-pen"></i></a>
-                        <ng-template #edithd>
-                            <app-edit-habilidad-d></app-edit-habilidad-d>
-                        </ng-template>
-                        <a *ngIf="admin" id="beditar" (click)="openHd(trashD)" ><i class="fa fa-solid fa-trash"></i></a>
-                        <ng-template #trashD let-modal>
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Borrar Registro</h5>
-                                  </div>
-                                  <div class="modal-body">
-                                    !!!!Seguro que quiere eliminar?
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" (click)="cancel()" data-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-primary" (click)="deleteHd(habilidadesD.id)">Borrar</button>
-                                  </div>
-                                </div>
-                              </div>
-                        </ng-template>
-                    </div>
+            <ul class="ulduras">
+                <li *ngFor="let habilidadesD of hdurasl" class="list col-lg-1 col-md-2 col-sm-2 col-xs-2"
+                    id="{{habilidadesD.nombre}}">
+                    <div class="cont">
+                        <div class="nbar">
+                            <img [src]="habilidadesD.imgIcono" alt="" class="icon">
+                            <p class="titulo">{{habilidadesD.nombre}}</p>
+                        </div>
 
+                        <div class="bbar">
+                            <div class="pbar">
+                                <div class="por" style="--p:{{habilidadesD.progreso}}%">
+                                    <!-- {{habilidadesD.progreso}}% -->
+                                </div>
+                            </div>
+                            <div class="pbar">
+                                <div class="pore" style="--p:{{(habilidadesD.tiempoexpe)*20}}%">
+                                    <!-- {{habilidadesD.progreso}}% -->
+                                </div>
+                            </div>
+                            <div class="conbot">
+                                <a *ngIf="admin" (click)="openEditHd(edithd, habilidadesD.id)" id="beditar">
+                                    <i class="fa fa-pen tfa"></i></a>
+                                <ng-template #edithd>
+                                    <app-edit-habilidad-d></app-edit-habilidad-d>
+                                </ng-template>
+                                <a *ngIf="admin" id="beditar" (click)="openHd(trashD)"><i
+                                        class="fa fa-solid fa-trash tfa"></i></a>
+                                <ng-template #trashD let-modal>
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Borrar Registro</h5>
+                                            </div>
+                                            <div class="modal-body">
+                                                !!!!Seguro que quiere eliminar?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" (click)="cancel()"
+                                                    data-dismiss="modal">Cancelar</button>
+                                                <button type="button" class="btn btn-primary"
+                                                    (click)="deleteHd(habilidadesD.id)">Borrar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>

@@ -4,8 +4,15 @@
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" id="perfil">
-            <img [src]="user.img" onError="this.src='../../../assets/img/Perfil_Error.jpg';" alt="Imagen Perfil"
-                class="img-fluid" id="iperfil">
+            <div class="menu">
+                <img [src]="user.img" onError="this.src='../../../assets/img/Perfil_Error.jpg';" alt="Imagen Perfil"
+                    class="img-fluid" id="iperfil">
+                <li *ngFor="let habilidadesD of hdurasl; let i = index; let las = last;" style="--i:{{i}}; --l:{{hdurasl.length}};">
+                    <a href="#{{habilidadesD.nombre}}" class="imaicon">
+                        <img [src]="habilidadesD.imgIcono" class="icon" alt="">
+                    </a>
+                </li>
+            </div>
             <p id="nombrePerfil">{{user.nombre}} {{user.apellido}}</p>
             <p id="ptitulo" *ngIf="isLogin">{{user.titulo}}</p>
         </div>

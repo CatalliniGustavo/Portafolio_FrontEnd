@@ -10,7 +10,7 @@ import { TokenService } from './token.service';
 })
 export class HblandasService {
   
-  URL = 'https://ancient-ocean-71608.herokuapp.com/hblandas/';
+  URL = 'https://porfoliogustavocatallini.onrender.com/hblandas/';
 
   constructor(private http: HttpClient, private tokenService: TokenService, private datosPorfolio: PorfolioService) { }
 

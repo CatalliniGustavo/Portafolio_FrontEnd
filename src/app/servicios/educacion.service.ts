@@ -9,7 +9,7 @@ import { TokenService } from './token.service';
   providedIn: 'root'
 })
 export class EducacionService {
-    URL = 'https://ancient-ocean-71608.herokuapp.com/educacion/';
+    URL = 'https://porfoliogustavocatallini.onrender.com/educacion/';
 
   constructor(private http: HttpClient, private tokenService: TokenService, private datosPorfolio: PorfolioService) { }
 

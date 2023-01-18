@@ -1,9 +1,12 @@
 <div id="fondo">
-    
+
     <app-header></app-header>
 
-    <div *ngIf="!login" (click)="open(requestlog)"><img id="profile-background"
-            src="../../../assets/img/Banner_sinLogin.jpg" alt="Banner">
+    <!-- <div *ngIf="!login" (click)="open(requestlog)"><img id="profile-background"
+            src="../../../assets/img/Perfil_ Portada.jpg" alt="Banner">
+    </div> para cundo el back funcione -->
+    <div *ngIf="!login"><img id="profile-background"
+            src="../../../assets/img/Perfil_ Portada.jpg" alt="Banner">
     </div>
 
     <ng-template #requestlog let-modal>

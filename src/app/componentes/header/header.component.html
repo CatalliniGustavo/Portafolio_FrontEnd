@@ -44,7 +44,14 @@
                 Sesión</button>
         </div>
 
-        <div *ngIf="!isLogin" id="butt">
+        <div>
+            <p style="color: rgb(255, 255, 255);">Por problemas en Heroku el login está fuera de servicio</p>
+            <a href="https://www.linkedin.com/in/gustavo-catallini-2693511b5/" target="_blank" style="display: flex; flex-direction: row;">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" style="height: 30px; box-shadow: 0px 0px 5px white;" alt=""> 
+                <p style="color: white; margin-left: 5px;"> LinkdIn</p>
+            </a>
+        </div>
+        <!-- <div *ngIf="!isLogin" id="butt">
             <button class="btn btn-danger" type="submit" (click)="open(login)" *ngIf="!isLogin">Login</button>
             <ng-template #login let-modal>
                 <app-login></app-login>
@@ -53,7 +60,7 @@
             <ng-template #registre let-modal>
                 <app-register></app-register>
             </ng-template>
-        </div>
+        </div> -->
 
     </div>
     

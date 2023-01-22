@@ -26,14 +26,14 @@
                                 </div>
                             </div>
                             <div class="conbot">
-                                <a *ngIf="admin" (click)="openEditHd(edithd, habilidadesB.id)" id="beditar">
+                                <a *ngIf="admin" (click)="openEditHb(edithb, habilidadesB.id)" id="beditar">
                                     <i class="fa fa-pen tfa"></i></a>
-                                <ng-template #edithd>
-                                    <app-edit-habilidad-d></app-edit-habilidad-d>
+                                <ng-template #edithb>
+                                    <app-edi-habilidad></app-edi-habilidad>
                                 </ng-template>
-                                <a *ngIf="admin" id="beditar" (click)="openHd(trashD)"><i
+                                <a *ngIf="admin" id="beditar" (click)="openHb(trashB)"><i
                                         class="fa fa-solid fa-trash tfa"></i></a>
-                                <ng-template #trashD let-modal>
+                                <ng-template #trashB let-modal>
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -46,7 +46,7 @@
                                                 <button type="button" class="btn btn-secondary" (click)="cancel()"
                                                     data-dismiss="modal">Cancelar</button>
                                                 <button type="button" class="btn btn-primary"
-                                                    (click)="deleteHd(habilidadesB.id)">Borrar</button>
+                                                    (click)="deleteHb(habilidadesB.id)">Borrar</button>
                                             </div>
                                         </div>
                                     </div>

@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   password!: string;
   roles: string[] = [];
   errMsj!: string;
+  sub = false;
 
   constructor(
     private tokenService: TokenService,
@@ -36,27 +37,47 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void {
-    this.loginUsuario = new LoginUsuario(this.email, this.password);
-    this.authService.login(this.loginUsuario).subscribe(data => {
-      this.isLogged = true;
-      this.isLogginFail = false;
-      this.tokenService.setToken(data.token);
-      this.tokenService.setUserName(data.email);
-      this.tokenService.setAthorities(data.authorities);
-      this.roles = data.authorities;
-      window.location.reload();
-      this.modalService.dismissAll();
-    }, err =>{
-      this.isLogged = false;
-      this.isLogginFail = true;
-      this.errMsj = err.error.mensaje;
-      alert(this.errMsj);
-      console.log(this.errMsj);
-      
-    })
+    
+    if (!this.email.includes("@") || !this.email.includes(".")) {
+      this.errMsj = "Email mal ingrezado"
+    } else if (this.password.length != 8) {
+      this.errMsj = "Tamaño de la contraseña incorrecto"
+    } else {
+
+      this.loginUsuario = new LoginUsuario(this.email, this.password);
+
+      this.sub = true;
+      this.errMsj = "...Espere porfavor, la primer ves pude tardar..."
+
+      this.authService.login(this.loginUsuario).subscribe(data => {
+
+        this.isLogged = true;
+        this.isLogginFail = false;
+        this.tokenService.setToken(data.token);
+        this.tokenService.setUserName(data.email);
+        this.tokenService.setAthorities(data.authorities);
+        this.roles = data.authorities;
+        window.location.reload();
+        this.modalService.dismissAll();
+
+      }, err => {
+
+        this.sub = false;
+        this.isLogged = false;
+        this.isLogginFail = true;
+        this.errMsj = err.error.message;
+        
+        if (err.error.mensaje != undefined) {
+          this.errMsj = err.error.mensaje
+        } else if (this.errMsj == undefined) {
+          this.errMsj = "Error al conectar con el servidor"
+        } 
+
+      })
+    }
   }
 
-  cancel(){
+  cancel() {
     this.modalService.dismissAll();
   }
 

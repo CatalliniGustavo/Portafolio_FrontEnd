@@ -1,6 +1,11 @@
 <!-- <button class="btn btn-danger" type="submit" (click)="home()">Home</button> -->
 <form #f="ngForm" (ngSubmit)="onRegist()" novalidate>
-    <h1 class="h3 nb-3 fw-normal">Registrarse</h1> 
+
+    <div class="titulo">
+        <h1 class="h3 mb-3 fw-normal">Registrarse</h1>
+        <div *ngIf="sub" class="spinner-border text-primary" role="status"></div>
+    </div>
+
     <p>{{errMsj}}</p>
 
     <label for="Nombre"></label>

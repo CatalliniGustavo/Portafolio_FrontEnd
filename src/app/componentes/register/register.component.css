@@ -3,6 +3,11 @@ input {
   width: 100%;
 }
 
+.titulo {
+  display: flex;
+  justify-content: space-between;
+}
+
 form {
   padding-left: 50px;
   padding-top: 30px;

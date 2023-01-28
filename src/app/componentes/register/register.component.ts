@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
     } else if (this.apellido == undefined || this.apellido.length < 1) {
       this.errMsj = "Debe ingresar el apellido"
     } else if (!this.email.includes("@") || !this.email.includes(".")) {
-      this.errMsj = "Email mal ingrezado"
+      this.errMsj = "Email mal ingresado"
     } else if (this.password.length != 8) {
       this.errMsj = "Tamaño de la contraseña incorrecto"
     } else {
@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
       this.nuevoUsuario = new NuevoUsuario(this.nombre, this.email, this.apellido, this.password);
 
       this.sub = true;
-      this.errMsj = "...espere porfavor, puede tardar..."
+      this.errMsj = "...espere por favor, puede tardar..."
 
       this.authService.nuevo(this.nuevoUsuario).subscribe(data => {
         this.isLogged = true;

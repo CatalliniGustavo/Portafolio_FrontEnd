@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
   onLogin(): void {
     
     if (!this.email.includes("@") || !this.email.includes(".")) {
-      this.errMsj = "Email mal ingrezado"
+      this.errMsj = "Email mal ingresado"
     } else if (this.password.length != 8) {
       this.errMsj = "Tamaño de la contraseña incorrecto"
     } else {
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
       this.loginUsuario = new LoginUsuario(this.email, this.password);
 
       this.sub = true;
-      this.errMsj = "...Espere porfavor, la primer ves pude tardar..."
+      this.errMsj = "...espere por favor, la primera vez pude tardar..."
 
       this.authService.login(this.loginUsuario).subscribe(data => {
 
